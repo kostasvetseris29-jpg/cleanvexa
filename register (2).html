@@ -1,0 +1,75 @@
+<!doctype html><html lang="el"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#1669b7"><title>Εγγραφή καθαριστή | CLEANVEXA</title>
+<style>
+:root{font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif;color:#1b3d61;background:#f3f8ff}*{box-sizing:border-box}body{margin:0}a{color:#1769ba}header{background:white;border-bottom:1px solid #dde9f4}.nav{max-width:1050px;margin:auto;padding:19px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.logo{font-weight:850;text-decoration:none;font-size:22px;color:#1268bc}.links{display:flex;gap:18px;font-weight:650;font-size:14px}.links a{text-decoration:none;color:#23445f}.hero{background:linear-gradient(120deg,#183b66,#117cce);padding:55px 20px 105px;text-align:center;color:white}.hero p{max-width:620px;margin:10px auto;line-height:1.6}.hero h1{font-size:clamp(30px,6vw,48px);margin:10px auto}.wrap{max-width:770px;margin:-65px auto 60px;padding:0 18px;position:relative}.panel{border:1px solid #e0eaf5;border-radius:23px;background:white;padding:28px;box-shadow:0 15px 38px #1b4d7920}.panel h2{margin-top:0}.hint{color:#60748b;line-height:1.6;font-size:14px}.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:flex;flex-direction:column;gap:7px;margin-bottom:17px}label{font-size:14px;font-weight:700}input,select,textarea{padding:13px;border-radius:11px;border:1px solid #bbd0e3;color:#1b3d61;font:inherit;width:100%;background:white}textarea{min-height:88px;resize:vertical}.btn{background:#146ebc;border:0;color:white;font:inherit;font-weight:750;padding:15px 22px;border-radius:12px;cursor:pointer}.btn:disabled{opacity:.5}.secondary{background:#edf6ff;color:#155d9e}.info{background:#eef7ff;border:1px solid #cbdff4;border-radius:12px;padding:14px;line-height:1.65}.status{margin:15px 0;white-space:pre-line;line-height:1.6}.profile-controls{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}.privacy-state{font-size:14px;font-weight:700;color:#195f9d}.danger{background:#fff0f0;color:#a52f3b;border:1px solid #ebbac1}.hidden{display:none!important}footer{text-align:center;color:#637b92;padding:25px;font-size:13px}@media(max-width:600px){.row{grid-template-columns:1fr}.panel{padding:22px}.nav{padding:16px}.links{gap:12px;font-size:12px}}
+</style></head><body><header><nav class="nav"><a class="logo" href="index.html">✦ CLEANVEXA</a><div class="links"><a href="index.html">Αρχική</a><a href="cleaners.html">Καθαριστές</a><a href="register.html">Εγγραφή</a></div></nav></header>
+<section class="hero"><p style="letter-spacing:2px;font-weight:750">CLEANING MADE EASY</p><h1>Γίνε συνεργάτης του CLEANVEXA</h1><p>Αυτόματη δημιουργία προφίλ καθαριστή για περιοχές εντός Ελλάδας, μετά την επιβεβαίωση του email σου.</p></section>
+<main class="wrap"><section class="panel"><div class="info"><strong>Πρώτη έκδοση: Ελλάδα</strong><div>Δημόσια εμφανίζονται μόνο το όνομα προβολής, οι περιοχές, οι υπηρεσίες, η διαθεσιμότητα και η περιγραφή σου. Μην γράφεις τηλέφωνο, διεύθυνση ή προσωπικά στοιχεία στα δημόσια πεδία. Δεν υπάρχουν ακόμη κρατήσεις ή πληρωμές.</div></div>
+<div id="configWarning" class="status"></div>
+<section id="loginSection"><h2>1. Επιβεβαίωσε το email σου</h2><p class="hint">Θα λάβεις σύνδεσμο εισόδου. Μετά την επιβεβαίωση θα συμπληρώσεις το προφίλ σου.</p><form id="loginForm"><div class="field"><label for="email">Email</label><input id="email" type="email" required autocomplete="email" placeholder="name@example.com"></div><div class="field"><div class="cf-turnstile" data-sitekey="0x4AAAAAAFZOyFP5yV6MjMJD" data-theme="light"></div><p class="hint">Ολοκλήρωσε τον έλεγχο ασφαλείας πριν ζητήσεις σύνδεσμο.</p></div><button class="btn" type="submit">Στείλε σύνδεσμο στο email μου</button></form></section>
+<section id="profileSection" class="hidden"><h2>2. Δημιούργησε το προφίλ σου</h2><p class="hint" id="signedIn"></p><form id="profileForm"><div class="row"><div class="field"><label for="display_name">Όνομα προβολής</label><input id="display_name" required minlength="2" maxlength="80" placeholder="π.χ. Μαρία Κ."></div><div class="field"><label for="city">Πόλη</label><input id="city" required minlength="2" maxlength="80" placeholder="π.χ. Αθήνα"></div></div><div class="field"><label for="areas">Περιοχές εξυπηρέτησης</label><input id="areas" required minlength="2" maxlength="200" placeholder="π.χ. Χολαργός, Παπάγου, Αγία Παρασκευή"></div><div class="row"><div class="field"><label for="service_type">Είδος καθαρισμού</label><select id="service_type"><option value="both">Σπίτια και επαγγελματικοί χώροι</option><option value="home">Σπίτια</option><option value="business">Επαγγελματικοί χώροι</option></select></div><div class="field"><label for="experience">Εμπειρία</label><select id="experience"><option>Χωρίς προηγούμενη εμπειρία</option><option>Έως 1 έτος</option><option>1–3 έτη</option><option>Πάνω από 3 έτη</option></select></div></div><div class="field"><label for="availability">Διαθεσιμότητα</label><input id="availability" required minlength="2" maxlength="160" placeholder="π.χ. Δευτέρα–Παρασκευή, 09:00–15:00"></div><div class="field"><label for="bio">Μικρή περιγραφή (προαιρετικά)</label><textarea id="bio" maxlength="300" placeholder="Γράψε μόνο επαγγελματικές πληροφορίες"></textarea></div><button class="btn" type="submit" id="saveProfile">Αποθήκευση προφίλ</button> <button class="btn secondary" type="button" id="signout">Αποσύνδεση</button></form><div id="profileControls" class="profile-controls hidden"><span id="visibilityState" class="privacy-state"></span><button class="btn secondary" id="toggleVisibility" type="button">Απόκρυψη προφίλ</button></div><p class="hint" id="visibilityHint">Όταν κρύψεις το προφίλ, δεν θα εμφανίζεται στη δημόσια αναζήτηση. Τα στοιχεία του θα παραμείνουν αποθηκευμένα.</p></section>
+<div id="status" role="status" aria-live="polite" class="status"></div></section></main><footer>© 2026 CLEANVEXA · Δοκιμαστική λειτουργία — χωρίς ενεργές κρατήσεις</footer>
+<script src="config.js"></script><script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script><script type="module">
+import {createClient} from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+const cfg=window.CLEANVEXA_CONFIG||{};const ready=/^https:\/\//.test(cfg.supabaseUrl||'')&&!!cfg.supabaseAnonKey&&!cfg.supabaseAnonKey.startsWith('PASTE_');
+const status=document.getElementById('status');const report=(text,err=false)=>{status.textContent=text;status.style.color=err?'#a9273a':'#195f9d'};
+if(!ready){document.getElementById('configWarning').textContent='Η εγγραφή δεν είναι ενεργή ακόμη. Πρέπει πρώτα να συνδέσουμε τη βάση δεδομένων Supabase.';document.querySelectorAll('button[type=submit]').forEach(b=>b.disabled=true)}
+else{
+ const sb=createClient(cfg.supabaseUrl,cfg.supabaseAnonKey,{auth:{detectSessionInUrl:true,persistSession:true}});
+  let currentProfile=null;
+  const profileControls=document.getElementById('profileControls');
+  function showVisibility(){
+    const exists=!!currentProfile;
+    profileControls.classList.toggle('hidden',!exists);
+    if(!exists)return;
+    const visible=currentProfile.is_visible===true;
+    document.getElementById('visibilityState').textContent=visible?'Προφίλ: Δημόσιο':'Προφίλ: Κρυφό';
+    const button=document.getElementById('toggleVisibility');
+    button.textContent=visible?'Απόκρυψη προφίλ':'Εμφάνιση προφίλ';
+    button.classList.toggle('danger',visible);
+  }
+  async function refresh(){
+    const {data:{user},error}=await sb.auth.getUser();
+    if(error&&error.message!=='Auth session missing!'){report('Αδυναμία ελέγχου σύνδεσης: '+error.message,true)}
+    document.getElementById('loginSection').classList.toggle('hidden',!!user);
+    document.getElementById('profileSection').classList.toggle('hidden',!user);
+    if(!user){currentProfile=null;showVisibility();return;}
+    document.getElementById('signedIn').textContent='Συνδέθηκες ως '+user.email;
+    const {data,error:profileError}=await sb.from('cleaner_profiles').select('user_id,display_name,city,areas,service_type,availability,experience,bio,is_visible').eq('user_id',user.id).maybeSingle();
+    if(profileError){report('Αδυναμία φόρτωσης προφίλ: '+profileError.message,true);return;}
+    currentProfile=data;
+    if(data){for(const id of ['display_name','city','areas','service_type','availability','experience','bio']){
+      const el=document.getElementById(id);if(el&&data[id]!=null)el.value=data[id];
+    }}
+    showVisibility();
+  }
+ document.getElementById('loginForm').addEventListener('submit',async e=>{e.preventDefault();const b=e.currentTarget.querySelector('button');b.disabled=true;report('Αποστολή συνδέσμου…');const email=document.getElementById('email').value.trim();const captchaToken=window.turnstile?.getResponse?.();if(!captchaToken){report('Ολοκλήρωσε πρώτα τον έλεγχο ασφαλείας Turnstile.',true);b.disabled=false;return;}const redirectTo=new URL('register.html',location.href).href.split('?')[0];const {error}=await sb.auth.signInWithOtp({email,options:{emailRedirectTo:redirectTo,shouldCreateUser:true,captchaToken}});window.turnstile?.reset?.();report(error?'Δεν στάλθηκε ο σύνδεσμος: '+error.message:'Έλεγξε το email σου και άνοιξε τον σύνδεσμο επιβεβαίωσης.',!!error);b.disabled=false;});
+  document.getElementById('profileForm').addEventListener('submit',async e=>{
+    e.preventDefault();const b=document.getElementById('saveProfile');b.disabled=true;report('Αποθήκευση…');
+    try{
+      const {data:{user},error:authErr}=await sb.auth.getUser();
+      if(authErr||!user)throw new Error('Συνδέσου ξανά.');
+      if(!user.email_confirmed_at)throw new Error('Πρέπει να επιβεβαιώσεις το email σου.');
+      const get=id=>document.getElementById(id).value.trim();
+      const payload={user_id:user.id,display_name:get('display_name'),city:get('city'),areas:get('areas'),service_type:get('service_type'),availability:get('availability'),experience:get('experience'),bio:get('bio'),country:'GR',is_visible:currentProfile?currentProfile.is_visible:true,updated_at:new Date().toISOString()};
+      const {error}=await sb.from('cleaner_profiles').upsert(payload,{onConflict:'user_id'});
+      if(error)throw error;
+      currentProfile={...payload};showVisibility();report(currentProfile.is_visible?'Το προφίλ αποθηκεύτηκε και είναι δημόσιο.':'Το προφίλ αποθηκεύτηκε και παραμένει κρυφό.');
+    }catch(err){report('Η αποθήκευση απέτυχε: '+err.message,true)}finally{b.disabled=false}
+  });
+  document.getElementById('toggleVisibility').addEventListener('click',async()=>{
+    if(!currentProfile)return;
+    const b=document.getElementById('toggleVisibility');b.disabled=true;
+    const next=!currentProfile.is_visible;
+    report(next?'Εμφάνιση προφίλ…':'Απόκρυψη προφίλ…');
+    try{
+      const {data:{user},error:authErr}=await sb.auth.getUser();
+      if(authErr||!user)throw new Error('Συνδέσου ξανά.');
+      const {data,error}=await sb.from('cleaner_profiles').update({is_visible:next,updated_at:new Date().toISOString()}).eq('user_id',user.id).select('is_visible').single();
+      if(error)throw error;
+      currentProfile.is_visible=data.is_visible;showVisibility();
+      report(data.is_visible?'Το προφίλ εμφανίζεται ξανά στην αναζήτηση.':'Το προφίλ κρύφτηκε από τη δημόσια αναζήτηση.');
+    }catch(err){report('Η αλλαγή απέτυχε: '+err.message,true)}finally{b.disabled=false}
+  });
+ document.getElementById('signout').addEventListener('click',async()=>{await sb.auth.signOut();await refresh();report('Αποσυνδέθηκες.');});sb.auth.onAuthStateChange(()=>setTimeout(refresh,0));await refresh();
+}
+</script></body></html>
